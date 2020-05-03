@@ -9,6 +9,26 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
+import os
+import sys
+
+# DJANGO INTEGRATION
+
+sys.path.append(os.path.dirname(os.path.abspath('.')))
+# Do not forget the change iCrawler part based on your project name
+os.environ['DJANGO_SETTINGS_MODULE'] = 'unlimitedsafari.settings'
+
+# This is required only if Django Version > 1.8
+import django
+django.setup()
+from django.conf import settings
+
+
+DRIVER_DIR = os.path.join(settings.BASE_DIR, 'driver')
+print(DRIVER_DIR)
+
+# DJANGO INTEGRATION
+
 BOT_NAME = 'scraper'
 
 SPIDER_MODULES = ['scraper.spiders']
