@@ -12,6 +12,7 @@
 import os
 import sys
 
+
 # DJANGO INTEGRATION
 
 sys.path.append(os.path.dirname(os.path.abspath('.')))
@@ -21,11 +22,6 @@ os.environ['DJANGO_SETTINGS_MODULE'] = 'unlimitedsafari.settings'
 # This is required only if Django Version > 1.8
 import django
 django.setup()
-from django.conf import settings
-
-
-DRIVER_DIR = os.path.join(settings.BASE_DIR, 'driver')
-print(DRIVER_DIR)
 
 # DJANGO INTEGRATION
 
