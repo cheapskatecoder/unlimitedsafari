@@ -28,7 +28,7 @@
 
     {% if 'signup' not in request.path and 'signin' not in request.path %}
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="{% url 'home' %}">
+        <a class="navbar-brand" href="{% url 'accounts:home' %}">
             <img src="{% static 'img/unlimitedsafari.png' %}" class="img-fluid" height="80" width="50" alt="">
             Unlimited Safari
         </a>

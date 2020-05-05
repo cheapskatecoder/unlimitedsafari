@@ -5,7 +5,13 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from accounts.models import SafariAccount
 
 
-class Dashboard(LoginRequiredMixin, View):
+class Dashboard(View):
+    template_name = 'dashboard/home.html'
+
     def get(self, request):
-        data = list(SafariAccount.objects.values()) 
-        return JsonResponse(data, safe=False)
+        return render(request, self.template_name)
+
+
+def GetSafariAccount(request):
+    data = list(SafariAccount.objects.filter(is_expired=False).values())
+    return JsonResponse(data, safe=False)
