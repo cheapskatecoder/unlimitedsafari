@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'background_task', # https://django-background-tasks.readthedocs.io/en/latest/
 
     'accounts',
+    'dashboard',
 ]
 
 MIDDLEWARE = [
@@ -110,3 +111,5 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+LOGIN_URL = '/signin'

@@ -19,7 +19,7 @@ class CreateaccountsSpider(scrapy.Spider):
     name = 'createaccounts'
     allowed_domains = ['https://www.oreilly.com/member/register']
     start_urls = ['https://www.oreilly.com/member/register/']
-    browser = Browser('firefox', headless=False, incognito=True)
+    browser = Browser('firefox', headless=True, incognito=True)
 
     def parse(self, response):
         """
