@@ -1,38 +1,50 @@
 # Unlimited Safari
 
-I am too cheap to buy and too lazy to create accounts for [Safaribooks](https://www.oreilly.com/) everytime one expires. So I created this little scraper to create accounts store them in a DB and serve them to the user with the help of Django.
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-## Installation
+Are you a cheapskate just like me? Can you not afford to buy a monthly subscription of Orilley's Safaribooks? Well here's your chance to have unlimited free accounts.
 
-Create a visualenv either by using `pyenv` (my preferred way of creating virtualenvs) and activate it.
+Unlimited safari creates a trial account for Orilley Safari Books every 10 days (or at the trail expiration date), automatically, so you will never have to create them manually. 
 
+### Stack Used
+Below mentioned is the list of all technologies, frameworks, languages, DB's used for building this application.
+
+* [Python] - Python 3.8.0
+* [Django] - Django 3.0 though it would run the same with 2.2 or whatever the earlier LTS version is.
+* [Django Rest Framework] - To serve the data in JSON format.
+* [jQuery] - For a much more user friendly DOM manipulation API.
+* [PostgreSQL] - Holds the data for user, trial safari accounts, etc.
+
+
+### Installation
+Follow along to know how to setup the project.
+
+```sh
+# clone the repository
+$ git clone https://github.com/iamllama/unlimitedsafari.git
+# cd into the new cloned directory and install the requirements
+$ pip install -r requirements.txt
+# create a database called unlimitedsafari
+$ postgres -U postgres
+postgres > create database unlimitedsafari;
+# run the server
+$ ./manage.py runserver 
 ```
-pyenv virtualenv 3.8.0 unlimitedsafari
 
-pyenv activate unlimitedsafari
-```  
-Then install the dependencies using 
-
-```bash
-pip install -r requirements.txt
-```
-
-The last step is to create a database and change credentials inside `settings/dev.py` 
-
-## Running
-
-```python
-./manage.py migrate 
-
-./manage.py runserver 0:8080
-
-# to run the background tasks in order to create new accounts before they expire
-./manage.py process_tasks
-```
-
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Lisence Type - [Apache License 2.0]
 
 
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
+**Free Software, Hell Yeah!**
+
+[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
+
+   [Apache License 2.0]: <https://github.com/google/ExoPlayer/blob/release-v2/LICENSE>
+   [jQuery]: <https://jquery.com/>
+   [Python]: <https://www.python.org/>
+   [Django]: <https://www.djangoproject.com/>
+   [Django Rest Framework]: <https://www.django-rest-framework.org/>
+   [Javascript]: <https://javascript.info/>
+   [PostgreSQL]: <https://www.postgresql.org/>
+   [Apache2]: <https://httpd.apache.org/>
+   [MySQL]: <https://www.mysql.com/>
+   [Composer]: <https://getcomposer.org/>
